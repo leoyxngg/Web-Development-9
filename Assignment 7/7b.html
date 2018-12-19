@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1 class = "center">Logical Operators</h1>
+    <h4 class = "center">Assuming x = <input onchange="getVal();" type="number" id="aValue" min="1" max="12">, and y = <input onchange="getVal();" type="number" id="bValue" min="1" max="12"></h4>
     <table style="width:100%" border="1">
         <tr>
             <th>Operator</th>
@@ -18,20 +20,20 @@
         <tr>
             <th>&&</th>
             <th>AND</th>
-            <th>x < 10 && x !== 5</th>
-            <th></th>
+            <th id = "example1">x < 10 && x !== 5</th>
+            <th id = "result1"></th>
         </tr>
         <tr>
             <th>||</th>
             <th>OR</th>
-            <th>y > 9 || x === 5</th>
-            <th></th>
+            <th id = "example2">y > 9 || x === 5</th>
+            <th id = "result2"></th>
         </tr>
         <tr>
             <th>!</th>
             <th>NOT</th>
-            <th>!(x === y)</th>
-            <th></th>
+            <th id = "example3">!(x === y)</th>
+            <th id = "result3"></th>
         </tr>
     </table>
 

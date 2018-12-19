@@ -1,5 +1,5 @@
 function getVal(){   
-    var aValue = document.getElementById("aValue").value;
+    var aValue = document.getElementById("aValue").valueAsNumber;
 
     document.getElementById("show1").innerHTML = aValue + " > 10";
     document.getElementById("result1").innerHTML = (aValue > 10);
