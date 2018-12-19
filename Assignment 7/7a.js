@@ -1,14 +1,28 @@
-function myScript(input) { 
-    setTimeout(function() {  // because we're using the onkeydown event which returns the value before processed key, add a wait
-        var number = input.value;
-        var a = document.querySelector("#a");
-        var resulta = document.querySelector("#resulta");
-        a.innerHTML = number + " > 10";
-        resulta.innerHTML = number > 10; 
-        var b = document.querySelector("#b");
-        var resultb = document.querySelector("#resultb");
-        b.innerHTML = number + " >= 5";
-        resultb.innerHTML = number >= 5;
-    },10);
-    
-}
+function getVal(){   
+    var aValue = document.getElementById("aValue").value;
+
+    document.getElementById("show1").innerHTML = aValue + " > 10";
+    document.getElementById("result1").innerHTML = (aValue > 10);
+
+    document.getElementById("show2").innerHTML = aValue + " >= 5";
+    document.getElementById("result2").innerHTML = (aValue >= 5);
+
+    document.getElementById("show3").innerHTML = aValue + " < -50";
+    document.getElementById("result3").innerHTML = (aValue < -50);
+
+    document.getElementById("show4").innerHTML = aValue + " <= 100";
+    document.getElementById("result4").innerHTML = (aValue <= 100);
+
+    document.getElementById("show5").innerHTML = aValue + " == \"5\"";
+    document.getElementById("result5").innerHTML = (aValue == "5");
+
+    document.getElementById("show6").innerHTML = aValue + " != \"b\"";
+    document.getElementById("result6").innerHTML = (aValue >= "b");
+ 
+    document.getElementById("show7").innerHTML = aValue + " === \"5\"";
+    document.getElementById("result7").innerHTML = (aValue === "5");
+
+    document.getElementById("show8").innerHTML = aValue + " !== \"5\"";
+    document.getElementById("result8").innerHTML = (aValue !== "5");
+ }
+ 
