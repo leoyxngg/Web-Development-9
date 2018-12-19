@@ -1,0 +1,47 @@
+h2 {
+    color: red
+  }
+
+  body {background-color: yellow}
+
+  title {
+    font-size: 24px;
+    background-color: rgb(153, 236, 58);
+    font-family: 'Times New Roman', Times, serif;
+    color: blue;
+}
+
+#special1{
+    font-size: 24px;
+    background-color: blue;
+    font-family: 'Times New Roman', Times, serif;
+    color: blue;
+}
+
+.stuff{
+    color:magenta
+}
+
+h1{
+    color:blue;
+}
+
+#special2{
+    font-size: 56px;
+    background-color: purple;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#special3{
+    font-size: 75px;
+    background-color: grenn;
+    color: blue; 
+}
+
+.stuff2{
+    color: green;
+}
+
+.stuff3{
+    color: yellow;
+}
