@@ -26,13 +26,13 @@ function getVal() {
     if (example1ResultTrue) {
         document.getElementById("result1").innerHTML = thumbUp;
         document.getElementById("tr1").style.backgroundColor = "green";
-        document.getElementById("tr1").style.color = "red";
+        document.getElementById("tr1").style.color = "white";
         document.getElementById("tr1").style.fontFamily = "Josefin Sans";
     }
     else {
         document.getElementById("result1").innerHTML = thumbDown;
         document.getElementById("tr1").style.backgroundColor = "red";
-        document.getElementById("tr1").style.color = "green";
+        document.getElementById("tr1").style.color = "white";
     }
 
     document.getElementById("example2").innerHTML = bValue + " > 9 || " + aValue + " === 5";
@@ -40,13 +40,13 @@ function getVal() {
     if (example2ResultTrue) {
         document.getElementById("result2").innerHTML = thumbUp;
         document.getElementById("tr2").style.backgroundColor = "green";
-        document.getElementById("tr2").style.color = "red";
+        document.getElementById("tr2").style.color = "white";
         document.getElementById("tr2").style.fontFamily = "Josefin Sans";
     }
     else {
         document.getElementById("result2").innerHTML = thumbDown;
         document.getElementById("tr2").style.backgroundColor = "red";
-        document.getElementById("tr2").style.color = "green";
+        document.getElementById("tr2").style.color = "white";
     }
 
 
@@ -55,12 +55,12 @@ function getVal() {
     if (example3ResultTrue) {
         document.getElementById("result3").innerHTML = thumbUp;
         document.getElementById("tr3").style.backgroundColor = "green";
-        document.getElementById("tr3").style.color = "red";
+        document.getElementById("tr3").style.color = "white";
         document.getElementById("tr3").style.fontFamily = "Josefin Sans"
     }
     else {
         document.getElementById("result3").innerHTML = thumbDown;
         document.getElementById("tr3").style.backgroundColor = "red";
-        document.getElementById("tr3").style.color = "green";
+        document.getElementById("tr3").style.color = "white";
     }
 }
