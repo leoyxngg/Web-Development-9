@@ -10,10 +10,16 @@
 </head>
 
 <body>
+    <div id = "winDisplay" class = "center"></div>
     <h1 class = "center">The Goal: Accumulate 2 cartons</h1>
-    <div>
+    <h3 class = "center">Your egg count is currently: </h3><h3 id = "eggCount" class = center></h3>
+    <h3 class = "center">Your carton count is currently: </h3><h3 id = "cartonCount" class = "center"></h3>
+    <div class = "center" style = "visibility: hidden;" id = "button"><button onclick="reset()"> <b>Reset</b> </button></div>
+    <div class = "center">
         <img onClick="addEgg()" src="pics/hen.jpg" class="src">
     </div>
+    <div id = "eggPan"></div>
+    <div id = "eggShelf"></div>
     <script src="7c.js"></script>
 </body>
 
