@@ -15,7 +15,7 @@ function getVal() {
         return;
     }
     else{
-        document.getElementById("errorMessageForY").innerHTML = "";
+        document.getElementById("errorMessageForY").innerHTML = "";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
     }
 
     var thumbUp = "<i class=\"material-icons\">thumb_up</i>";
