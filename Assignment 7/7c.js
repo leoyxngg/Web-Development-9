@@ -15,7 +15,6 @@ function addEgg() {
     clickCounts += 1;
     document.getElementById("eggCount").innerHTML = clickCounts;
 
-
     if (clickCounts == 12) {
         eggToCarton(eggCarton);
     }
@@ -55,4 +54,3 @@ function reset() {
     clickCounts = 0;
     cartonCounts = 0;
 }
-
