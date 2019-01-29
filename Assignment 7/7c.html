@@ -6,20 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Assignment 7c</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id = "winDisplay" class = "center"></div>
-    <h1 class = "center">The Goal: Accumulate 2 cartons</h1>
-    <h3 class = "center">Your egg count is currently: </h3><h3 id = "eggCount" class = center></h3>
-    <h3 class = "center">Your carton count is currently: </h3><h3 id = "cartonCount" class = "center"></h3>
-    <div class = "center" style = "visibility: hidden;" id = "button"><button onclick="reset()"> <b>Reset</b> </button></div>
-    <div class = "center">
-        <img onClick="addEgg()" src="pics/hen.jpg" class="src">
+ 
+
+    <h1>Egg Clicker</h1>
+    <p>Goal: 2 cartons</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm" id="henHome">
+                <img id = "hen" class="hen" onClick="addEgg()" src="pics/download.jpg">
+            </div>
+            <div class="col-sm">
+                <div id="eggs"></div>
+            </div>
+            <div class="col-sm">
+                <div id="carton"></div>
+            </div>
+        </div>
     </div>
-    <div id = "eggPan"></div>
-    <div id = "eggShelf"></div>
+
+    <p id="body"></p>
     <script src="7c.js"></script>
-</body>
+</body> 
 </html>
