@@ -63,4 +63,9 @@ function getVal() {
         document.getElementById("tr3").style.backgroundColor = "red";
         document.getElementById("tr3").style.color = "white";
     }
+
+    if(example1ResultTrue && example2ResultTrue && example3ResultTrue)
+    {
+        document.getElementById('body').style.backgroundColor = "blue";
+    }
 }
