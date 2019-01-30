@@ -19,7 +19,7 @@ function larger(){
 }
 
 function smaller(){
-    alert("Your guess is smaller than the number.")
+    alert("Your guess is smaller than the number.");
 }
 
 alert("Congradulations! You have guessed the correct number! It took you a total of " + guessNum + " tries.");
