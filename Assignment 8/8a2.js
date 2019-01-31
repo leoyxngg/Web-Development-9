@@ -1,24 +1,25 @@
 var randomNum = Math.floor((Math.random() * 10) + 1);
-alert(randomNum);
 var guess = 0;
 var guessNum = 0;
 
 function guessNumber() {
-
-    while (guess != randomNum) {
-        guessNum++;
+    guess = document.getElementById("guess").value;
+    if (guess == randomNum) {
+        alert("Congradulations! You have guessed the correct number! It took you a total of " + guessNum + " tries.");
+        return;
+    }
+    else {
         if (guess > randomNum) {
             larger();
-            return;
         }
-
         if (guess < randomNum) {
             smaller();
-            return;
         }
+        guessNum++;
+        
     }
-    alert("Congradulations! You have guessed the correct number! It took you a total of " + guessNum + " tries.");
 }
+
 
 function larger() {
     alert("Your guess is larger than the number.");
