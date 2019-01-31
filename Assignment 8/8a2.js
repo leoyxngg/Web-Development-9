@@ -20,7 +20,6 @@ function guessNumber() {
     }
 }
 
-
 function larger() {
     alert("Your guess is larger than the number.");
 }
