@@ -47,3 +47,4 @@ function sound(src) {
         this.sound.pause();
     }
 }
+// Test
