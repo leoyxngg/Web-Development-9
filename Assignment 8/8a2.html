@@ -2,28 +2,34 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Assignment 8a2</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Assignment 8a2</title>
 </head>
 
 <body>
-    <div class="center">
-        <h1>
-            Guess The Number
-        </h1>
-        <h4>
-            Try and guess the Number! Ranging from 1 to 10!
-        </h4>
-    </div>
+  <div id="currentScore">
+    <label>
+      Your current score is:
+    </label>
+  </div>
+  <div class="center" id="highScore">HIGH SCORE: </div>
+  <div class="center">
+    <h1>
+      Guess The Number
+    </h1>
+    <h4>
+      Try and guess the Number! Ranging from 1 to 10!
+    </h4>
+  </div>
 
-    <div class="center">
-        <input id="guess" type="number" max="10" min="1">
-        <button onclick="guessNumber()">Guess</button>
-    </div>
-    <script src="8a2.js"></script>
+  <div class="center">
+    <input id="guess" type="number" max="10" min="1">
+    <button onclick="guessNumber()">Guess</button>
+  </div>
+  <script src="8a2.js"></script>
 </body>
 
 </html>
