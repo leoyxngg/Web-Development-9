@@ -7,7 +7,7 @@ var winSound = new sound("sounds/win.mp3");
 var highScore = 0;
 function guessNumber() {
   guessNum++;
-  var currentScore = 10000 - 100*(guessNum);
+  var currentScore = 10000 - 100 * (guessNum);
   guess = document.getElementById("guess").value;
 
   document.getElementById("currentScore").innerHTML = currentScore;
@@ -16,15 +16,15 @@ function guessNumber() {
   if (guess == randomNum) {
     winSound.play();
     document.getElementById("hintPlace").innerHTML = "<img src='img/win.png' alt = 'winPicture'>"
-    
-    if(currentScore > highScore){
+
+    if (currentScore > highScore) {
       highScore = currentScore;
       var name = prompt("Please enter your name, you have reached a high score: ");
       document.getElementById("name").innerHTML = name;
     }
 
     document.getElementById("highScore").innerHTML = highScore;
-    
+
   } else {
     if (guess > randomNum) {
       larger();
@@ -35,7 +35,7 @@ function guessNumber() {
   }
 }
 
-function reset(){
+function reset() {
   guessNum = 0;
   currentScore = 0;
   document.getElementById("currentScore").innerHTML = "";
@@ -59,10 +59,10 @@ function sound(src) {
   this.sound.setAttribute("controls", "none");
   this.sound.style.display = "none";
   document.body.appendChild(this.sound);
-  this.play = function() {
+  this.play = function () {
     this.sound.play();
   }
-  this.stop = function() {
+  this.stop = function () {
     this.sound.pause();
   }
 }
