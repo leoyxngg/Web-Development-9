@@ -4,12 +4,25 @@ var guessNum = 0;
 var largerSound = new sound("sounds/larger.mp3");
 var smallerSound = new sound("sounds/smaller.mp3");
 var winSound = new sound("sounds/win.mp3");
+var highScore = 0;
 function guessNumber() {
+  guessNum++;
+  var currentScore = 10000 - 100*(guessNum);
   guess = document.getElementById("guess").value;
+
+  document.getElementById("currentScore").innerHTML = currentScore;
+  document.getElementById("guessNum").innerHTML = guessNum;
+
   if (guess == randomNum) {
     winSound.play();
     document.getElementById("hintPlace").innerHTML = "<img src='img/win.png' alt = 'winPicture'>"
-    return;
+    
+    if(currentScore > highScore){
+      highScore = currentScore;
+    }
+
+    document.getElementById("highScore").innerHTML = highScore;
+    
   } else {
     if (guess > randomNum) {
       larger();
@@ -17,10 +30,6 @@ function guessNumber() {
     if (guess < randomNum) {
       smaller();
     }
-    guessNum++;
-    var currentScore = 10000 - 100*(guessNum);
-    document.getElementById("currentScore").innerHTML = currentScore;
-    document.getElementById("guessNum").innerHTML = guessNum;
   }
 }
 
