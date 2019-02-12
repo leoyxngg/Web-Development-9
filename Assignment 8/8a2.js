@@ -9,7 +9,7 @@ function guessNumber() {
   guess = document.getElementById("guess").value;
   if (guess == randomNum) {
     winSound.play();
-    alert("Congradulations! You have guessed the correct number! It took you a total of " + guessNum + " tries.");
+    document.getElementById("hintPlace").innerHTML = "<img src='img/win.png' alt = 'winPicture'>"
     return;
   } else {
     if (guess > randomNum) {
