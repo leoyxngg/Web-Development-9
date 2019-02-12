@@ -19,6 +19,8 @@ function guessNumber() {
     
     if(currentScore > highScore){
       highScore = currentScore;
+      var name = prompt("Please enter your name, you have reached a high score: ");
+      document.getElementById("name").innerHTML = name;
     }
 
     document.getElementById("highScore").innerHTML = highScore;
@@ -31,6 +33,13 @@ function guessNumber() {
       smaller();
     }
   }
+}
+
+function reset(){
+  guessNum = 0;
+  currentScore = 0;
+  document.getElementById("currentScore").innerHTML = "";
+  document.getElementById("guessNum").innerHTML = "";
 }
 
 function larger() {
