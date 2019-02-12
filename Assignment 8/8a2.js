@@ -1,11 +1,11 @@
 var randomNum = Math.floor((Math.random() * 10) + 1);
 var guess = 0;
-var guessNum = 0;
+var guessNum = 1;
 var largerSound = new sound("sounds/larger.mp3");
 var smallerSound = new sound("sounds/smaller.mp3");
 var winSound = new sound("sounds/win.mp3");
-var currentScore = 50000 - 100*(guess);
 function guessNumber() {
+  var currentScore = 50100 - 100*(guessNum);
   guess = document.getElementById("guess").value;
   if (guess == randomNum) {
     winSound.play();
