@@ -25,12 +25,12 @@ function guessNumber() {
 
 function larger() {
   largerSound.play();
-  alert("Your guess is larger than the number.");
+  document.getElementById("hintPlace").innerHTML = "<img src='img/down.png' alt = 'higher'>";
 }
 
 function smaller() {
   smallerSound.play();
-  alert("Your guess is smaller than the number.");
+  document.getElementById("hintPlace").innerHTML = "<img src='img/up.png' width = '128' height = '128' alt = 'lower'>"
 }
 
 function sound(src) {
