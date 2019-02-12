@@ -5,7 +5,7 @@ var largerSound = new sound("sounds/larger.mp3");
 var smallerSound = new sound("sounds/smaller.mp3");
 var winSound = new sound("sounds/win.mp3");
 function guessNumber() {
-  var currentScore = 50100 - 100*(guessNum);
+  var currentScore = 10000 - 100*(guessNum);
   guess = document.getElementById("guess").value;
   if (guess == randomNum) {
     winSound.play();
@@ -19,6 +19,7 @@ function guessNumber() {
       smaller();
     }
     guessNum++;
+    document.getElementById("currentScore").innerHTML = currentScore;
   }
 }
 
