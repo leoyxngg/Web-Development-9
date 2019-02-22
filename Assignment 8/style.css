@@ -13,3 +13,13 @@ h1{
 h4{
     color: darkblue;
 }
+
+#control{
+    background-color: yellowgreen;
+    border-radius: 10%;
+  }
+ #play{
+    background-color: rgb(50, 205, 202);
+    text-align: center;
+    border-radius: 10%;
+ } 
