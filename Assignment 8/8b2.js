@@ -1,19 +1,18 @@
-//variables list
-var myRange = document.getElementById('myRange')
-var output = document.getElementById('output')
+var myRange = document.getElementById('myRange');
+var output = document.getElementById('output');
 output.innerHTML = myRange.value;
 function updateOutput() {
     output.innerHTML = myRange.value;
 }
 var appleArea = document.getElementById('appleArea');
-var greenApple = '<img src="img/green_apple.png" class="bad1" onmouseover="chop(this.id)" ';
+var greenApple = '<img src="img/green_apple.png" class="bad1" onmouseover="chop(this.id)"';
 var redApple = '<img src="img/red_apple.png" class="good1" onmouseover="chop(this.id)"';
 var goodAppleMax = 0;
 var goodAppleCount = 0;
+var win = false;
+var finish = false;
 
-//one-time command
 document.getElementById('restartBtn').style.display = 'none';
-
 
 function genApple() {
     document.getElementById("countdown").style.visibility = "visible";
@@ -25,7 +24,6 @@ function genApple() {
         if (Math.random() < 0.8) {
             appleArea.innerHTML += redApple + goodId;
             goodAppleMax++;
-            alert(goodAppleMax);
         } else {
             appleArea.innerHTML += greenApple + badId;
         }
@@ -38,6 +36,7 @@ function genApple() {
 var countdownInterval;
 var currentCount;
 function countdown(howManyApples) {
+    document.getElementById('timebar').style.width = currentCount * 10 + '%';
     var timeAllowed = Math.round(howManyApples / 2);
     document.getElementById("countdown").innerHTML = timeAllowed;
     currentCount = timeAllowed;
@@ -46,10 +45,14 @@ function countdown(howManyApples) {
 }
 function doCount() {
     currentCount--;
-    document.getElementById('countdown').innerHTML = currentCount
-    if (currentCount == 0) {
-        // time is up - you lose
+    document.getElementById('countdown').innerHTML = currentCount;
+    if (currentCount == 0 ) {
         clearInterval(countdownInterval);
+        if (!win ||finish)
+        {
+            document.getElementById("display").innerHTML = '<img src= "img/lose.png">'
+            finish = true;
+        }
     }
 }
 
@@ -61,23 +64,47 @@ function restart() {
     goodAppleMax = 0;
     window.clearInterval(countdownInterval);
     document.getElementById("countdown").style.visibility = "hidden";
+    document.getElementById("display").innerHTML = "";
+    win = false;
+    finish = false;
 }
 
 function chop(appleId) {
     var isGood = appleId[0] == 'g'
-    if (isGood) {
-        document.getElementById(appleId).className = 'good2';
-        goodAppleCount++;
-        document.getElementById("goodAppleCount").innerHTML = goodAppleCount;
-    } else {
-        document.getElementById(appleId).className = 'bad2';
+    if (win == true || finish == true)
+    {
+
     }
+    else
+    {
+        if (isGood) {
+            if (document.getElementById(appleId).className == "good2") {
+    
+            }
+            else {
+                goodAppleCount++;
+                document.getElementById("goodAppleCount").innerHTML = goodAppleCount;
+            }
+            document.getElementById(appleId).className = 'good2';
+        } else {
+            if (document.getElementById(appleId).className == "bad2") {
+    
+            }
+            else {
+                currentCount--;
+                document.getElementById('countdown').innerHTML = currentCount;
+            }
+            document.getElementById(appleId).className = 'bad2';
+        }
+    }
+    isGoodAppleChopped();
 }
 
-function stopCountDown() {
+function isGoodAppleChopped() {
     if (goodAppleCount == goodAppleMax) {
         window.clearInterval(countdownInterval);
-        alert("test");
+        document.getElementById("display").innerHTML = '<img src= "img/win.png">';
+        win=true;
+        finish=true;
     }
-    
 }
