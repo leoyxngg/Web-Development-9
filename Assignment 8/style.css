@@ -22,13 +22,11 @@ h4{
     background-color: rgb(50, 205, 202);
     text-align: center;
     border-radius: 10%;
+    cursor: url('img/knife.png'), auto;
  }
 .good2{
   content:url("img/red_apple_broken.png");
 } 
 .bad2{
   content:url("img/green_apple_broken.png");
-}
-*{
-  cursor: url('img/knife.png'), auto;
 }
