@@ -11,6 +11,7 @@ var goodAppleMax = 0;
 var goodAppleCount = 0;
 var win = false;
 var finish = false;
+var timeAllowed; 
 
 document.getElementById('restartBtn').style.display = 'none';
 
@@ -36,16 +37,17 @@ function genApple() {
 var countdownInterval;
 var currentCount;
 function countdown(howManyApples) {
-    document.getElementById('timebar').style.width = currentCount * 10 + '%';
-    var timeAllowed = Math.round(howManyApples / 2);
+    timeAllowed = Math.round(howManyApples / 2);
     document.getElementById("countdown").innerHTML = timeAllowed;
     currentCount = timeAllowed;
     clearInterval(countdownInterval);
     countdownInterval = setInterval(doCount, 1000);
 }
 function doCount() {
+
     currentCount--;
     document.getElementById('countdown').innerHTML = currentCount;
+    document.getElementById('timebar').style.width = (currentCount / timeAllowed) * 100 + "%";
     if (currentCount == 0 ) {
         clearInterval(countdownInterval);
         if (!win ||finish)

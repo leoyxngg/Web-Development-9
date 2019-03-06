@@ -25,7 +25,7 @@ function guessNumber() {
 
     document.getElementById("highScore").innerHTML = highScore;
 
-  } else {
+  } else {  
     if (guess > randomNum) {
       larger();
     }
