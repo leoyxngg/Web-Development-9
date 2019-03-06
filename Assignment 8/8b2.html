@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="8b1.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Assignment 8b2</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div id="control" class="col-sm-4">
+                <h2>Control Area</h2>
+                <input type="range" min="1" max="100" value="50" id="myRange" class="slider" oninput="updateOutput()">
+                <div id="output">output here</div>
+                <button id="genBtn" type="button" class="btn btn-primary" onclick="genApple()">Generate Apples</button>
+                <button id="restartBtn" type="button" class="btn btn-secondary" onclick="restart()">Restart</button>
+
+            </div>
+            <div id="play" class="col-sm-8">
+                <h2>Play Area</h2>
+                <div>Time remaining:<span id="countdown"></span></div>
+                <div>Good apples chopped:<span id="goodAppleCount"></span></div>
+                <div id="appleArea"></div>
+            </div>
+        </div>
+    </div>
+    <script src="8b2.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
