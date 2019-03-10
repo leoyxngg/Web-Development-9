@@ -12,10 +12,16 @@ var goodAppleCount = 0;
 var win = false;
 var finish = false;
 var timeAllowed; 
+var goodAppleSound = new sound("sounds/good_chop.mp3");
+var badAppleSound = new sound("sounds/bad_chop.mp3");
+var winSound = new sound("sounds/win_chop.mp3");
+var loseSound = new sound("sounds/lose_chop.mp3");
+var startSound = new sound("sounds/start_chop.mp3");
 
 document.getElementById('restartBtn').style.display = 'none';
 
 function genApple() {
+    startSound.play();
     document.getElementById("countdown").style.visibility = "visible";
     var howManyApples = myRange.value;
     var goodId, badId;
@@ -44,7 +50,6 @@ function countdown(howManyApples) {
     countdownInterval = setInterval(doCount, 1000);
 }
 function doCount() {
-
     currentCount--;
     document.getElementById('countdown').innerHTML = currentCount;
     document.getElementById('timebar').style.width = (currentCount / timeAllowed) * 100 + "%";
@@ -52,6 +57,7 @@ function doCount() {
         clearInterval(countdownInterval);
         if (!win ||finish)
         {
+            loseSound.play();
             document.getElementById("display").innerHTML = '<img src= "img/lose.png">'
             finish = true;
         }
@@ -84,6 +90,7 @@ function chop(appleId) {
     
             }
             else {
+                goodAppleSound.play();
                 goodAppleCount++;
                 document.getElementById("goodAppleCount").innerHTML = goodAppleCount;
             }
@@ -93,6 +100,7 @@ function chop(appleId) {
     
             }
             else {
+                badAppleSound.play();
                 currentCount--;
                 document.getElementById('countdown').innerHTML = currentCount;
             }
@@ -104,9 +112,25 @@ function chop(appleId) {
 
 function isGoodAppleChopped() {
     if (goodAppleCount == goodAppleMax) {
+        winSound.play();
         window.clearInterval(countdownInterval);
         document.getElementById("display").innerHTML = '<img src= "img/win.png">';
         win=true;
         finish=true;
     }
 }
+
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+      this.sound.play();
+    }
+    this.stop = function(){
+      this.sound.pause();
+    }
+  }
