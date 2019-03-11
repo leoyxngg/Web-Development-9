@@ -58,7 +58,7 @@ function doCount() {
         if (!win ||finish)
         {
             loseSound.play();
-            document.getElementById("display").innerHTML = '<img src= "img/lose.png">'
+            document.getElementById("display").innerHTML = '<img src= "img/lose.png">';
             finish = true;
         }
     }

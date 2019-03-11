@@ -3,7 +3,7 @@
 }
 
 body{
-    background-color: lightblue;
+    background-color: rebeccapurple;
 }
 
 h1{
@@ -15,12 +15,12 @@ h4{
 }
 
 #control{
-    background-color: yellowgreen;
+    background-color: brown;
     border-radius: 10%;
   }
 
  #play{
-    background-color: rgb(50, 205, 202);
+    background-color: yellow;
     text-align: center;
     border-radius: 10%;
     cursor: url('img/knife.png'), auto;
@@ -35,5 +35,5 @@ h4{
 }
 
 #timebar{
-  background-color: lightblue;
+  background-color: yellowgreen;
 }
