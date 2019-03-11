@@ -20,7 +20,7 @@
         <div class="row">
             <div id="control" class="col-sm-4">
                 <h2>Control Area</h2>
-                <input type="range" min="1" max="100" value="50" id="myRange" class="slider" oninput="updateOutput()">
+                <input disabled type="range" min="1" max="100" value="50" id="myRange" class="slider" oninput="updateOutput()">
                 <div id="output">output here</div>
                 <button id="genBtn" type="button" class="btn btn-primary" onclick="genApple()">Generate Apples</button>
                 <button id="restartBtn" type="button" class="btn btn-secondary" onclick="restart()">Restart</button>
@@ -36,8 +36,6 @@
         </div>
     </div>
     <script src="8b3.js"></script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

@@ -53,7 +53,7 @@ function doCount() {
     currentCount--;
     document.getElementById('countdown').innerHTML = currentCount;
     document.getElementById('timebar').style.width = (currentCount / timeAllowed) * 100 + "%";
-    if (currentCount == 0 ) {
+    if (currentCount <= 0 ) {
         clearInterval(countdownInterval);
         if (!win ||finish)
         {
@@ -69,6 +69,7 @@ function restart() {
     document.getElementById('genBtn').style.display = '';
     document.getElementById('restartBtn').style.display = 'none';
     goodAppleCount = 0;
+    document.getElementById("goodAppleCount").innerHTML = goodAppleCount;
     goodAppleMax = 0;
     window.clearInterval(countdownInterval);
     document.getElementById("countdown").style.visibility = "hidden";
