@@ -45,14 +45,14 @@ var currentCount;
 function countdown(howManyApples) {
     timeAllowed = Math.round(howManyApples / 2);
     document.getElementById("countdown").innerHTML = timeAllowed;
-    currentCount = timeAllowed;
+    currentCount = timeAllowed * 1000;
     clearInterval(countdownInterval);
-    countdownInterval = setInterval(doCount, 1000);
+    countdownInterval = setInterval(doCount, 100);
 }
 function doCount() {
-    currentCount--;
-    document.getElementById('countdown').innerHTML = currentCount;
-    document.getElementById('timebar').style.width = (currentCount / timeAllowed) * 100 + "%";
+    currentCount-=100;
+    document.getElementById('countdown').innerHTML = currentCount/1000;
+    document.getElementById('timebar').style.width = (currentCount / (timeAllowed * 1000)) * 100 + "%";
     if (currentCount <= 0 ) {
         clearInterval(countdownInterval);
         if (!win ||finish)
@@ -102,7 +102,7 @@ function chop(appleId) {
             }
             else {
                 badAppleSound.play();
-                currentCount--;
+                currentCount-=100;
                 document.getElementById('countdown').innerHTML = currentCount;
             }
             document.getElementById(appleId).className = 'bad2';
@@ -116,6 +116,7 @@ function isGoodAppleChopped() {
         winSound.play();
         window.clearInterval(countdownInterval);
         document.getElementById("display").innerHTML = '<img src= "img/win.png">';
+        document.getElementById("appleArea").innerHTML = "";
         win=true;
         finish=true;
     }
