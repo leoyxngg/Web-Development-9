@@ -110,7 +110,17 @@ function chop(appleId) {
             }
             else {
                 badAppleSound.play();
-                currentCount -= 1000;
+                if(level == 1){
+                    currentCount -= 1000;
+                }
+
+                if(level == 2){
+                    currentCount -= 3000;
+                }
+
+                if(level == 3){
+                    currentCount -= 5000;
+                }
                 document.getElementById('countdown').innerHTML = currentCount;
             }
             document.getElementById(appleId).className = 'bad2';
