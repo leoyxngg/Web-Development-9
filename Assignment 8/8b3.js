@@ -14,26 +14,6 @@ var startSound = new sound("sounds/start_chop.mp3");
 
 document.getElementById('restartBtn').style.display = 'none';
 
-// function genAppleLevelOne1() {
-//     startSound.play();
-//     document.getElementById("countdown").style.visibility = "visible";
-//     var howManyApplesOne = 7;
-//     var goodId, badId;
-//     for (i = 0; i < howManyApplesOne; i++) {
-//         goodId = 'id="good' + i + '">';
-//         badId = 'id="bad' + i + '">';
-//         if (Math.random() < 0.8) {
-//             appleArea.innerHTML += redApple + goodId;
-//             goodAppleMax++;
-//         } else {
-//             appleArea.innerHTML += greenApple + badId;
-//         }
-//     }
-//     document.getElementById('level').style.display = 'none';
-//     document.getElementById('restartBtn').style.display = '';
-//     countdownOne(howManyApplesOne);
-// }
-
 function genAppleLevelOne()
 {
     genApple(7);
@@ -48,26 +28,6 @@ function genAppleLevelThree()
 {
     genApple(21);
 }
-
-// function genAppleLevelTwo2() {
-//     startSound.play();
-//     document.getElementById("countdown").style.visibility = "visible";
-//     var howManyApplesTwo = 14;
-//     for (i = 0; i < howManyApplesTwo; i++) {
-//         goodId = 'id="good' + i + '">';
-//         badId = 'id="bad' + i + '">';
-//         if (Math.random() < 0.8) {
-//             appleArea.innerHTML += redApple + goodId;
-//             goodAppleMax++;
-//         } else {
-//             appleArea.innerHTML += greenApple + badId;
-//         }
-//     }
-//     document.getElementById('level').style.display = 'none';
-//     document.getElementById('restartBtn').style.display = '';
-//     countdownTwo(howManyApplesTwo);
-// }
-
 
 function genApple(howManyApples)
 {
@@ -88,8 +48,6 @@ function genApple(howManyApples)
     countdown(howManyApples);
 }
 
-
-
 var countdownInterval;
 var currentCount;
 
@@ -100,14 +58,6 @@ function countdown(howManyApples) {
     clearInterval(countdownInterval);
     countdownInterval = setInterval(doCount, 100);
 }
-
-// function countdownTwo() {
-//     timeAllowed = 5;
-//     document.getElementById("countdown").innerHTML = timeAllowed;
-//     currentCount = timeAllowed * 1000;
-//     clearInterval(countdownInterval);
-//     countdownInterval = setInterval(doCount, 100);
-// }
 
 function doCount() {
     currentCount -= 100;
@@ -171,8 +121,6 @@ var level = 1;
 function isGoodAppleChopped() {
     if (goodAppleCount == goodAppleMax) {
         window.clearInterval(countdownInterval);
-        // document.getElementById('level').style.display = '';
-        // document.getElementById("level").innerHTML = '<button id="level" type="button" class="btn btn-primary" onclick="genAppleLevelTwo()">Level Two</button>';
         level ++;
         if (level < 4)
         {
@@ -194,7 +142,7 @@ function isGoodAppleChopped() {
 function levelUp(level)
 {
     document.getElementById('level').style.display = '';
-    document.getElementById('currentLevel').innerHTML = level
+    document.getElementById('currentLevel').innerHTML = level;
     switch (level){
         case 1:
            genAppleLevelOne();
