@@ -13,23 +13,46 @@ var winSound = new sound("sounds/win_chop.mp3");
 var loseSound = new sound("sounds/lose_chop.mp3");
 var startSound = new sound("sounds/start_chop.mp3");
 var yourScore = 0;
-
-
+var nextStageWait = 3;
+var waitInterval;
+var appleToGen =7
 document.getElementById('restartBtn').style.display = 'none';
 
 function genAppleLevelOne() {
-    genApple(7);
+    gameGo();
 }
 
 function genAppleLevelTwo() {
-    genApple(14);
+    nextStageWait = 3;
+    appleToGen =14
+    gameGo();
 }
 
 function genAppleLevelThree() {
-    genApple(21);
+    nextStageWait = 3;
+    appleToGen =21
+    gameGo();
+}
+function doWait(){
+    nextStageWait--;
+    if (nextStageWait<0){
+        clearInterval(waitInterval);
+        genApple();
+    }else{
+        document.getElementById("waitTime").innerHTML = nextStageWait;
+    }
+        
+    
+}
+function gameGo(){
+
+    waitInterval = setInterval(doWait,1000);
 }
 
-function genApple(howManyApples) {
+function genApple() {
+    howManyApples= appleToGen;
+    document.getElementById("waitTime").innerHTML = nextStageWait
+    
     startSound.play();
     document.getElementById("countdown").style.visibility = "visible";
     for (i = 0; i < howManyApples; i++) {
