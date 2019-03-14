@@ -1,9 +1,3 @@
-var myRange = document.getElementById('myRange');
-var output = document.getElementById('output');
-output.innerHTML = myRange.value;
-function updateOutput() {
-    output.innerHTML = myRange.value;
-}
 var appleArea = document.getElementById('appleArea');
 var greenApple = '<img src="img/green_apple.png" class="bad1" onmouseover="chop(this.id)"';
 var redApple = '<img src="img/red_apple.png" class="good1" onmouseover="chop(this.id)"';
@@ -11,7 +5,7 @@ var goodAppleMax = 0;
 var goodAppleCount = 0;
 var win = false;
 var finish = false;
-var timeAllowed; 
+var timeAllowed;
 var goodAppleSound = new sound("sounds/good_chop.mp3");
 var badAppleSound = new sound("sounds/bad_chop.mp3");
 var winSound = new sound("sounds/win_chop.mp3");
@@ -20,11 +14,65 @@ var startSound = new sound("sounds/start_chop.mp3");
 
 document.getElementById('restartBtn').style.display = 'none';
 
-function genApple() {
+// function genAppleLevelOne1() {
+//     startSound.play();
+//     document.getElementById("countdown").style.visibility = "visible";
+//     var howManyApplesOne = 7;
+//     var goodId, badId;
+//     for (i = 0; i < howManyApplesOne; i++) {
+//         goodId = 'id="good' + i + '">';
+//         badId = 'id="bad' + i + '">';
+//         if (Math.random() < 0.8) {
+//             appleArea.innerHTML += redApple + goodId;
+//             goodAppleMax++;
+//         } else {
+//             appleArea.innerHTML += greenApple + badId;
+//         }
+//     }
+//     document.getElementById('level').style.display = 'none';
+//     document.getElementById('restartBtn').style.display = '';
+//     countdownOne(howManyApplesOne);
+// }
+
+function genAppleLevelOne()
+{
+    genApple(7);
+}
+
+function genAppleLevelTwo()
+{
+    genApple(14);
+}
+
+function genAppleLevelThree()
+{
+    genApple(21);
+}
+
+// function genAppleLevelTwo2() {
+//     startSound.play();
+//     document.getElementById("countdown").style.visibility = "visible";
+//     var howManyApplesTwo = 14;
+//     for (i = 0; i < howManyApplesTwo; i++) {
+//         goodId = 'id="good' + i + '">';
+//         badId = 'id="bad' + i + '">';
+//         if (Math.random() < 0.8) {
+//             appleArea.innerHTML += redApple + goodId;
+//             goodAppleMax++;
+//         } else {
+//             appleArea.innerHTML += greenApple + badId;
+//         }
+//     }
+//     document.getElementById('level').style.display = 'none';
+//     document.getElementById('restartBtn').style.display = '';
+//     countdownTwo(howManyApplesTwo);
+// }
+
+
+function genApple(howManyApples)
+{
     startSound.play();
     document.getElementById("countdown").style.visibility = "visible";
-    var howManyApples = myRange.value;
-    var goodId, badId;
     for (i = 0; i < howManyApples; i++) {
         goodId = 'id="good' + i + '">';
         badId = 'id="bad' + i + '">';
@@ -35,13 +83,16 @@ function genApple() {
             appleArea.innerHTML += greenApple + badId;
         }
     }
-    document.getElementById('genBtn').style.display = 'none';
+    document.getElementById('level').style.display = 'none';
     document.getElementById('restartBtn').style.display = '';
     countdown(howManyApples);
 }
 
+
+
 var countdownInterval;
 var currentCount;
+
 function countdown(howManyApples) {
     timeAllowed = Math.round(howManyApples / 2);
     document.getElementById("countdown").innerHTML = timeAllowed;
@@ -49,14 +100,22 @@ function countdown(howManyApples) {
     clearInterval(countdownInterval);
     countdownInterval = setInterval(doCount, 100);
 }
+
+// function countdownTwo() {
+//     timeAllowed = 5;
+//     document.getElementById("countdown").innerHTML = timeAllowed;
+//     currentCount = timeAllowed * 1000;
+//     clearInterval(countdownInterval);
+//     countdownInterval = setInterval(doCount, 100);
+// }
+
 function doCount() {
-    currentCount-=100;
-    document.getElementById('countdown').innerHTML = currentCount/1000;
+    currentCount -= 100;
+    document.getElementById('countdown').innerHTML = currentCount / 1000;
     document.getElementById('timebar').style.width = (currentCount / (timeAllowed * 1000)) * 100 + "%";
-    if (currentCount <= 0 ) {
+    if (currentCount <= 0) {
         clearInterval(countdownInterval);
-        if (!win ||finish)
-        {
+        if (!win || finish) {
             loseSound.play();
             document.getElementById("display").innerHTML = '<img src= "img/lose.png">';
             finish = true;
@@ -66,7 +125,7 @@ function doCount() {
 
 function restart() {
     appleArea.innerHTML = '';
-    document.getElementById('genBtn').style.display = '';
+    document.getElementById('level').style.display = '';
     document.getElementById('restartBtn').style.display = 'none';
     goodAppleCount = 0;
     document.getElementById("goodAppleCount").innerHTML = goodAppleCount;
@@ -80,15 +139,13 @@ function restart() {
 
 function chop(appleId) {
     var isGood = appleId[0] == 'g'
-    if (win == true || finish == true)
-    {
+    if (win == true || finish == true) {
 
     }
-    else
-    {
+    else {
         if (isGood) {
             if (document.getElementById(appleId).className == "good2") {
-    
+
             }
             else {
                 goodAppleSound.play();
@@ -98,11 +155,11 @@ function chop(appleId) {
             document.getElementById(appleId).className = 'good2';
         } else {
             if (document.getElementById(appleId).className == "bad2") {
-    
+
             }
             else {
                 badAppleSound.play();
-                currentCount-=100;
+                currentCount -= 1000;
                 document.getElementById('countdown').innerHTML = currentCount;
             }
             document.getElementById(appleId).className = 'bad2';
@@ -110,17 +167,47 @@ function chop(appleId) {
     }
     isGoodAppleChopped();
 }
-
+var level = 1;
 function isGoodAppleChopped() {
     if (goodAppleCount == goodAppleMax) {
-        winSound.play();
         window.clearInterval(countdownInterval);
-        document.getElementById("display").innerHTML = '<img src= "img/win.png">';
-        document.getElementById("appleArea").innerHTML = "";
-        win=true;
-        finish=true;
+        // document.getElementById('level').style.display = '';
+        // document.getElementById("level").innerHTML = '<button id="level" type="button" class="btn btn-primary" onclick="genAppleLevelTwo()">Level Two</button>';
+        level ++;
+        if (level < 4)
+        {
+            document.getElementById("appleArea").innerHTML = "";
+            levelUp(level);
+        }
+        else
+        {
+            document.getElementById("display").innerHTML = '<img src= "img/win.png">';
+            win = true;
+            finish = true;
+        }
+        winSound.play();
+        
+       
     }
 }
+
+function levelUp(level)
+{
+    document.getElementById('level').style.display = '';
+    document.getElementById('currentLevel').innerHTML = level
+    switch (level){
+        case 1:
+           genAppleLevelOne();
+           break;
+        case 2:
+           genAppleLevelTwo();
+           break;
+        case 3:
+           genAppleLevelThree();
+           break;
+    }
+}
+
 
 function sound(src) {
     this.sound = document.createElement("audio");
@@ -129,10 +216,10 @@ function sound(src) {
     this.sound.setAttribute("controls", "none");
     this.sound.style.display = "none";
     document.body.appendChild(this.sound);
-    this.play = function(){
-      this.sound.play();
+    this.play = function () {
+        this.sound.play();
     }
-    this.stop = function(){
-      this.sound.pause();
+    this.stop = function () {
+        this.sound.pause();
     }
-  }
+}

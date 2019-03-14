@@ -20,15 +20,13 @@
         <div class="row">
             <div id="control" class="col-sm-4">
                 <h2>Control Area</h2>
-                <input type="range" min="1" max="100" value="50" id="myRange" class="slider" oninput="updateOutput()">
-                <div id="output"></div>
-                <button id="genBtn" type="button" class="btn btn-primary" onclick="genApple()">Generate Apples</button>
+                <button id="level" type="button" class="btn btn-primary" onclick="genAppleLevelOne()">Start</button>
                 <button id="restartBtn" type="button" class="btn btn-secondary" onclick="restart()">Restart</button>
-
             </div>
             <div id="play" class="col-sm-8">
                 <h2>Play Area</h2>
                 <div id="timebar">Time remaining:<span id="countdown"></span></div>
+                <div>Level:<span id="currentLevel"></span></div>
                 <div>Good apples chopped:<span id="goodAppleCount"></span></div>
                 <div id = "display"></div>
                 <div id="appleArea"></div>
