@@ -80,7 +80,8 @@ function restart() {
     window.clearInterval(countdownInterval);
     document.getElementById("countdown").style.visibility = "hidden";
     document.getElementById("display").innerHTML = "";
-    level = 0;
+    level = 1;
+    document.getElementById("currentLevel").innerHTML = "1";
     win = false;
     finish = false;
 }
