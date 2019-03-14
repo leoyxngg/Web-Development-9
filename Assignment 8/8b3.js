@@ -12,6 +12,8 @@ var badAppleSound = new sound("sounds/bad_chop.mp3");
 var winSound = new sound("sounds/win_chop.mp3");
 var loseSound = new sound("sounds/lose_chop.mp3");
 var startSound = new sound("sounds/start_chop.mp3");
+var yourScore = 0;
+
 
 document.getElementById('restartBtn').style.display = 'none';
 
@@ -126,14 +128,17 @@ function isGoodAppleChopped() {
             levelUp(level);
         }
         else {
+            yourScore = goodAppleCount * 1000;
             document.getElementById("display").innerHTML = '<img src= "img/win.png">';
             document.getElementById("appleArea").innerHTML = "";
             win = true;
             finish = true;
         }
         winSound.play();
-
-
+        if (highScore < yourScore) {
+            highScore = yourScore;
+            document.getElementById("highScore").innerHTML = highScore;
+        }
     }
 }
 
@@ -167,10 +172,4 @@ function sound(src) {
     this.stop = function () {
         this.sound.pause();
     }
-}
-
-if (highScore < goodAppleCount) {
-    alert("dff");
-    highScore = goodAppleCount;
-    document.getElementById("highScore").innerHTML = highScore;
 }
