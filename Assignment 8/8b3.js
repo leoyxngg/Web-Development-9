@@ -3,6 +3,7 @@ var greenApple = '<img src="img/green_apple.png" class="bad1" onmouseover="chop(
 var redApple = '<img src="img/red_apple.png" class="good1" onmouseover="chop(this.id)"';
 var goodAppleMax = 0;
 var goodAppleCount = 0;
+var highScore = 0;
 var win = false;
 var finish = false;
 var timeAllowed;
@@ -14,23 +15,19 @@ var startSound = new sound("sounds/start_chop.mp3");
 
 document.getElementById('restartBtn').style.display = 'none';
 
-function genAppleLevelOne()
-{
+function genAppleLevelOne() {
     genApple(7);
 }
 
-function genAppleLevelTwo()
-{
+function genAppleLevelTwo() {
     genApple(14);
 }
 
-function genAppleLevelThree()
-{
+function genAppleLevelThree() {
     genApple(21);
 }
 
-function genApple(howManyApples)
-{
+function genApple(howManyApples) {
     startSound.play();
     document.getElementById("countdown").style.visibility = "visible";
     for (i = 0; i < howManyApples; i++) {
@@ -83,6 +80,7 @@ function restart() {
     window.clearInterval(countdownInterval);
     document.getElementById("countdown").style.visibility = "hidden";
     document.getElementById("display").innerHTML = "";
+    level = 0;
     win = false;
     finish = false;
 }
@@ -121,38 +119,36 @@ var level = 1;
 function isGoodAppleChopped() {
     if (goodAppleCount == goodAppleMax) {
         window.clearInterval(countdownInterval);
-        level ++;
-        if (level < 4)
-        {
+        level++;
+        if (level < 4) {
             document.getElementById("appleArea").innerHTML = "";
             levelUp(level);
         }
-        else
-        {
+        else {
             document.getElementById("display").innerHTML = '<img src= "img/win.png">';
+            document.getElementById("appleArea").innerHTML = "";
             win = true;
             finish = true;
         }
         winSound.play();
-        
-       
+
+
     }
 }
 
-function levelUp(level)
-{
+function levelUp(level) {
     document.getElementById('level').style.display = '';
     document.getElementById('currentLevel').innerHTML = level;
-    switch (level){
+    switch (level) {
         case 1:
-           genAppleLevelOne();
-           break;
+            genAppleLevelOne();
+            break;
         case 2:
-           genAppleLevelTwo();
-           break;
+            genAppleLevelTwo();
+            break;
         case 3:
-           genAppleLevelThree();
-           break;
+            genAppleLevelThree();
+            break;
     }
 }
 
@@ -170,4 +166,10 @@ function sound(src) {
     this.stop = function () {
         this.sound.pause();
     }
+}
+
+if (highScore < goodAppleCount) {
+    alert("dff");
+    highScore = goodAppleCount;
+    document.getElementById("highScore").innerHTML = highScore;
 }
