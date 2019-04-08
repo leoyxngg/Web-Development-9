@@ -15,15 +15,19 @@
 <link rel="stylesheet" href="style.css">
 
 <body>
+  <audio id="myAudio">
+    <source id="audioSource" type="audio/ogg">
+  </audio>
+
   <div class="container">
     <div class="row">
-      <div class="col-sm" id="fc0" onclick="flipOver(0)">
+      <div class="col-sm" id="fc0" onclick="flipOver(0)" onmouseover="playAudio(0)" onmouseout="stopAudio()">
         <img src="pics/img0.png">
       </div>
-      <div class="col-sm" id="fc1" onclick="flipOver(1)">
+      <div class="col-sm" id="fc1" onclick="flipOver(1)" onmouseover="playAudio(1)" onmouseout="stopAudio()">
         <img src="pics/img1.png">
       </div>
-      <div class="col-sm" id="fc2" onclick="flipOver(2)">
+      <div class="col-sm" id="fc2" onclick="flipOver(2)" onmouseover="playAudio(2)" onmouseout="stopAudio()">
         <img src="pics/img2.png">
       </div>
     </div>
@@ -31,13 +35,13 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-sm" id="fc3" onclick="flipOver(3)">
+      <div class="col-sm" id="fc3" onclick="flipOver(3)" onmouseover="playAudio(3) " onmouseout="stopAudio()">
         One of three columns
       </div>
-      <div class="col-sm" id="fc4" onclick="flipOver(4)">
+      <div class="col-sm" id="fc4" onclick="flipOver(4)" onmouseover="playAudio(4)" onmouseout="stopAudio()">
         One of three columns
       </div>
-      <div class="col-sm" id="fc5" onclick="flipOver(5)">
+      <div class="col-sm" id="fc5" onclick="flipOver(5)" onmouseover="playAudio(5)" onmouseout="stopAudio()">
         One of three columns
       </div>
     </div>
