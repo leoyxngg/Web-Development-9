@@ -4,9 +4,9 @@ function flipOver(index) {
     var verimg = '<img src="pics/img' + index + '.png">';
     document.getElementById("fc" + index).innerHTML = vertxt;
     if (name[name.length - 9] == "m") {
-        document.getElementById("fc" + index).innerHTML = vertxt
+        document.getElementById("fc" + index).innerHTML = vertxt;
     } else {
-        document.getElementById("fc" + index).innerHTML = verimg
+        document.getElementById("fc" + index).innerHTML = verimg;
     }
 }
 

@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
   <title>Assignment 9a1</title>
 </head>
@@ -21,43 +20,37 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-sm" id="fc0" onclick="flipOver(0)" onmouseover="playAudio(0)" onmouseout="stopAudio()">
-        <img src="pics/img0.png">
+      <div class="col-sm" id="fc0" onmouseenter="playAudio(0)" onmouseleave="stopAudio()">
+        <img src="pics/img0.png" onmouseover="this.src='pics/txt0.png';" onmouseout="this.src='pics/img0.png';">
       </div>
-      <div class="col-sm" id="fc1" onclick="flipOver(1)" onmouseover="playAudio(1)" onmouseout="stopAudio()">
-        <img src="pics/img1.png">
+      <div class="col-sm" id="fc1" onmouseover="playAudio(1)" onmouseout="stopAudio()">
+        <img src="pics/img1.png" onmouseover="this.src='pics/txt1.png';" onmouseout="this.src='pics/img1.png';">
       </div>
-      <div class="col-sm" id="fc2" onclick="flipOver(2)" onmouseover="playAudio(2)" onmouseout="stopAudio()">
-        <img src="pics/img2.png">
+      <div class="col-sm" id="fc2" onmouseover="playAudio(2)" onmouseout="stopAudio()">
+        <img src="pics/img2.png" onmouseover="this.src='pics/txt2.png';" onmouseout="this.src='pics/img2.png';">
       </div>
     </div>
   </div>
 
   <div class="container">
     <div class="row">
-      <div class="col-sm" id="fc3" onclick="flipOver(3)" onmouseover="playAudio(3) " onmouseout="stopAudio()">
-        One of three columns
+      <div class="col-sm" id="fc3" onmouseover="playAudio(3) " onmouseout="stopAudio()">
+        <img src="pics/img3.png" onmouseover="this.src='pics/txt3.png';" onmouseout="this.src='pics/img3.png';">
       </div>
-      <div class="col-sm" id="fc4" onclick="flipOver(4)" onmouseover="playAudio(4)" onmouseout="stopAudio()">
-        One of three columns
+      <div class="col-sm" id="fc4" onmouseover="playAudio(4)" onmouseout="stopAudio()">
+        <img src="pics/img4.png" onmouseover="this.src='pics/txt4.png';" onmouseout="this.src='pics/img4.png';">
       </div>
-      <div class="col-sm" id="fc5" onclick="flipOver(5)" onmouseover="playAudio(5)" onmouseout="stopAudio()">
-        One of three columns
+      <div class="col-sm" id="fc5" onmouseover="playAudio(5)" onmouseout="stopAudio()">
+        <img src="pics/img5.png" onmouseover="this.src='pics/txt5.png';" onmouseout="this.src='pics/img5.png';">
       </div>
     </div>
   </div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
   <script src="9a1.js"></script>
 </body>
