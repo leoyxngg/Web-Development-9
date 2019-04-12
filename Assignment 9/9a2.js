@@ -1,9 +1,11 @@
 var timeBeforeFlip = 5;
+var countDownInterval;
 
 function flipOver(index) {
   var name = (document.getElementById("fc" + index).innerHTML).trim();
   var vertxt = '<img src="pics/txt' + index + '.png">';
   var verimg = '<img src="pics/img' + index + '.png">';
+  countDownInterval = setInterval(doCount, 100);
   document.getElementById("fc" + index).innerHTML = vertxt;
   if (name[name.length - 9] == "m") {
     document.getElementById("fc" + index).innerHTML = vertxt;
@@ -32,4 +34,14 @@ function playAudio(index) {
 
 function stopAudio() {
   audio.pause();
+}
+
+function doCount() {
+  alert("hello");
+  timeBeforeFlip -= 1;
+  if (timeBeforeFlip <= 0) {
+    clearInterval(countDownInterval);
+    flipOver(index);
+    timeBeforeFlip = 5;
+  }
 }
