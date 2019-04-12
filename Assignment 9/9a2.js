@@ -2,14 +2,16 @@ var timeBeforeFlip = 5;
 var countDownInterval;
 
 function flipOver(index) {
+  timeBeforeFlip = 5;
   var name = (document.getElementById("fc" + index).innerHTML).trim();
   var vertxt = '<img src="pics/txt' + index + '.png">';
   var verimg = '<img src="pics/img' + index + '.png">';
-  countDownInterval = setInterval(doCount, 100);
+
   document.getElementById("fc" + index).innerHTML = vertxt;
   if (name[name.length - 9] == "m") {
     document.getElementById("fc" + index).innerHTML = vertxt;
     playAudio(index);
+    countDownInterval = setInterval(doCount, 500);
   } else {
     document.getElementById("fc" + index).innerHTML = verimg;
   }
@@ -37,11 +39,9 @@ function stopAudio() {
 }
 
 function doCount() {
-  alert("hello");
-  timeBeforeFlip -= 1;
+  timeBeforeFlip --;
   if (timeBeforeFlip <= 0) {
+    document.getElementById("allpics").innerHTML = "<img src='pics/img" + index + ".png'>"    
     clearInterval(countDownInterval);
-    flipOver(index);
-    timeBeforeFlip = 5;
   }
 }
