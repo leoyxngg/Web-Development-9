@@ -2,6 +2,7 @@ var countDownInterval;
 var currentIndex;
 
 function flipOver(index) {
+  clearInterval(countDownInterval);
   var name = (document.getElementById("fc" + index).innerHTML).trim();
   var vertxt = '<img src="pics/txt' + index + '.png">';
   var verimg = '<img src="pics/img' + index + '.png">';
@@ -14,6 +15,7 @@ function flipOver(index) {
     countDownInterval = setTimeout(doCount, 3000, index);
   } else {
     document.getElementById("fc" + index).innerHTML = verimg;
+    audio.pause();
   }
 }
 var allImages = '';
