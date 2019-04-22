@@ -41,5 +41,5 @@ function stopAudio() {
 }
 
 function doCount(index) {
-    flipOver(index);  
+  flipOver(index);
 }
