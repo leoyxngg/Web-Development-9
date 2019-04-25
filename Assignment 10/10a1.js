@@ -14,12 +14,10 @@ function genTn() {
     setTimeout(showButton, 1500 * numOfTerms);
 }
 
-
 function buildNextOne(n, tn) {
     console.log('t' + n + " = " + tn);
     document.getElementById("")
 }
-
 
 function showButton() {
     document.getElementById('buildButton').style.display = '';
