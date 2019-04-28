@@ -20,3 +20,15 @@ body {
 #formula {
     background-color: yellow;
 }
+
+span {
+    display: block;
+}
+
+#boxed {
+    border: 1px solid;
+}
+
+.tn {
+    font-size: 3em;
+}
