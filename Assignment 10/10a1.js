@@ -16,7 +16,6 @@ function genTn() {
 
 function buildNextOne(n, tn) {
     console.log('t' + n + " = " + tn);
-    document.getElementById("")
 }
 
 function showButton() {
