@@ -16,9 +16,14 @@
         Formula: <br>
         t<sub>n</sub> = t<sub>0</sub> + d*n <br>
         <br>
-        t<sub>n</sub> = 6<sub>0</sub> + 2*n
+        t<sub>0</sub>
+        <input type="range" min="-50" max="50" value="0" id="t0" class="slider">
         <br>
-
+        d
+        <input type="range" min="-50" max="50" value="0" id="d" class="slider">
+        <br>
+        <button id="buildButton" style="display:''" type="button" class="btn btn-warning"
+            onclick="genTn()">Generate</button>
     </div>
 
     <br>

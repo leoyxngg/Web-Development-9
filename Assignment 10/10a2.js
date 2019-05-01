@@ -1,8 +1,14 @@
-var t0, difference;
-t0 = 6;
-difference = 2;
+var t0, difference, redCircle, redTriangle, redRectangle, blueCircle, blueTriangle, blueRectangle;
+redCircle = "<img src='imgs/negativeOne.png'>";
+redTriangle = "<img src='imgs/negativeTen.png'>";
+redRectangle = "<img src='imgs/negativeHundred.png'";
+blueCircle = "<img src='imgs/one.png'";
+blueTriangle = "<img src='imgs/ten.png'";
+blueRectangle = "img src='imgs/hundred.png'";
 
 function genTn() {
+    t0 = document.getElementById("t0").value;
+    difference = document.getElementById("d").value;
     var tn;
     var numOfTerms = 12;
     console.log('start genTn');
