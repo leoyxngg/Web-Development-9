@@ -1,17 +1,17 @@
-.center{
+.center {
     text-align: center;
 }
 
-#constantsControl{
+#constantsControl {
     background-color: palegreen;
     border-radius: 10%;
-  }
+}
 
- #equation{
+#equation {
     background-color: yellow;
     text-align: center;
     border-radius: 10%;
- }
+}
 
 body {
     background-color: lightblue;
