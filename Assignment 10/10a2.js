@@ -7,6 +7,7 @@ blueTriangle = "<img src='imgs/ten.png'";
 blueRectangle = "img src='imgs/hundred.png'";
 
 function genTn() {
+    reset();
     t0 = document.getElementById("t0").value;
     difference = document.getElementById("d").value;
     numOfTerms = document.getElementById("tn").value;
@@ -14,27 +15,24 @@ function genTn() {
     document.getElementById('buildButton').style.display = 'none';
     for (n = 0; n < numOfTerms; n++) {
         tn = t0 * 1 + difference * n;
-        setTimeout(buildNextOne, 1500 * n, n, tn);
+        setTimeout(buildNextOne, 3000 * n, n, tn);
     }
-    setTimeout(showButton, 1500 * numOfTerms);
+    setTimeout(showButton, 3000 * numOfTerms);
 }
 
 function buildNextOne(n, tn) {
-    console.log('t' + n + " = " + tn);
-    document.getElementById("boxArea").innerHTML = '<div class="col-sm-4 col-md-2"><span id="boxed" class="center">t<sub>' + n + '</sub><span class="tn">' + tn + '</span><span><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"></span></span></div>'
+    var nodediv = document.createElement("div");
+    nodediv.setAttribute('style', 'col-md-2; margin-right: 10px;');
+    nodediv.innerHTML = '<span id="boxed" class="center">t<sub>' + n + '</sub><span class="tn">' + tn + '</span></span>';
+    document.getElementById("boxArea").appendChild(nodediv);
+    var msg = new SpeechSynthesisUtterance(tn);
+    window.speechSynthesis.speak(msg);
 }
 
 function showButton() {
     document.getElementById('buildButton').style.display = '';
 }
 
-{/* <div class="col-sm-4 col-md-2"><span id="boxed" class="center">t<sub>0</sub><span class="tn">6</span><span id="invisible">space</span><span><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"></span></span></div> */}
-
-{/* <div class="col-sm-4 col-md-2">
-    <span id="boxed" class="center">
-        t<sub>0</sub>
-        <span class="tn">6</span>
-        <span id="invisible">space</span>
-        <span><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"></span>
-    </span>
-</div> */}
+function reset() {
+    document.getElementById("boxArea").innerHTML = "";
+}

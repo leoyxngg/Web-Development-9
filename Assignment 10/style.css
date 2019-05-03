@@ -2,11 +2,6 @@
     text-align: center;
 }
 
-#constantsControl {
-    background-color: palegreen;
-    border-radius: 10%;
-}
-
 #equation {
     background-color: yellow;
     text-align: center;
@@ -31,8 +26,4 @@ span {
 
 .tn {
     font-size: 3em;
-}
-
-#invisible {
-    visibility: hidden;
 }
