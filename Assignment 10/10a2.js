@@ -21,10 +21,16 @@ function genTn() {
 }
 
 function buildNextOne(n, tn) {
-    var nodediv = document.createElement("div");
-    nodediv.setAttribute('style', 'col-md-2; margin-right: 10px;');
-    nodediv.innerHTML = '<span id="boxed" class="center">t<sub>' + n + '</sub><span class="tn">' + tn + '</span></span>';
-    document.getElementById("boxArea").appendChild(nodediv);
+    var insert = '<div class="col-sm-4 col-md-2">'
+    insert += '<span class="boxed center">'
+    insert += 't<sub>' + n + '</sub>'
+    insert += '<span class="tn">' + tn + '</span>'
+    // insert += '<span id="invisible">space</span>'
+    // insert += '<span><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"></span>'
+    insert += '</span>'
+    insert += '</div>'
+    document.getElementById("boxArea").innerHTML += insert;
+    
     var msg = new SpeechSynthesisUtterance(tn);
     window.speechSynthesis.speak(msg);
 }
