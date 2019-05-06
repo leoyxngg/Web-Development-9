@@ -25,12 +25,11 @@ function buildNextOne(n, tn) {
     insert += '<span class="boxed center">'
     insert += 't<sub>' + n + '</sub>'
     insert += '<span class="tn">' + tn + '</span>'
-    // insert += '<span id="invisible">space</span>'
-    // insert += '<span><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"><img src="imgs/one.png"></span>'
+    insert += getPicsRepresentOfNumber(tn);
     insert += '</span>'
     insert += '</div>'
     document.getElementById("boxArea").innerHTML += insert;
-    
+
     var msg = new SpeechSynthesisUtterance(tn);
     window.speechSynthesis.speak(msg);
 }
@@ -41,4 +40,29 @@ function showButton() {
 
 function reset() {
     document.getElementById("boxArea").innerHTML = "";
+}
+
+function getPicsRepresentOfNumber(number) {
+    var totalHund = 0,
+        totalTens = 0,
+        totalOnes = 0,
+        returnHtml = '';
+
+    totalHund = Math.abs(parseInt(number / 100));
+    var diffAfterRemovingHund = number % 100;
+    totalTens = Math.abs(parseInt(diffAfterRemovingHund / 10));
+    totalOnes = Math.abs(parseInt(diffAfterRemovingHund % 10));
+
+    for (var i = 0; i < totalHund; i++) {
+        returnHtml += number < 0 ? "<img src='imgs/negativeHundred.png'>" : "<img src='imgs/hundred.png'>";
+    }
+
+    for (var i = 0; i < totalTens; i++) {
+        returnHtml += number < 0 ? "<img src='imgs/negativeTen.png'>" : "<img src='imgs/ten.png'>";
+    }
+
+    for (var i = 0; i < totalOnes; i++) {
+        returnHtml += number < 0 ? "<img src='imgs/negativeOne.png'>" : "<img src='imgs/one.png'>";
+    }
+    return returnHtml;
 }
