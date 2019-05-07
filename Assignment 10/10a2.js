@@ -1,10 +1,4 @@
 var t0, difference, boxedNums, numOfTerms, redCircle, redTriangle, redRectangle, blueCircle, blueTriangle, blueRectangle;
-redCircle = "<img src='imgs/negativeOne.png'>&nbsp";
-redTriangle = "<img src='imgs/negativeTen.png'>&nbsp";
-redRectangle = "<img src='imgs/negativeHundred.png'>&nbsp";
-blueCircle = "<img src='imgs/one.png'>&nbsp";
-blueTriangle = "<img src='imgs/ten.png'>&nbsp";
-blueRectangle = "img src='imgs/hundred.png'>&nbsp";
 
 function genTn() {
     reset();
@@ -18,15 +12,16 @@ function genTn() {
         setTimeout(buildNextOne, 3000 * n, n, tn);
     }
     setTimeout(showButton, 3000 * numOfTerms);
+    document.getElementById("formulat0").innerHTML = t0;
+    document.getElementById("formulad").innerHTML = difference;
+    document.getElementById("formulan").innerHTML = numOfTerms;
 }
 
 function buildNextOne(n, tn) {
-    var insert = '<div class="col-sm-4 col-md-2">'
-    insert += '<span class="boxed center">'
-    insert += 't<sub>' + n + '</sub>'
+    var insert = '<div class="col-sm-4 col-md-2 boxed center">'
+    insert += 't<sub>' + n + '</sub><br>'
     insert += '<span class="tn">' + tn + '</span>'
     insert += getPicsRepresentOfNumber(tn);
-    insert += '</span>'
     insert += '</div>'
     document.getElementById("boxArea").innerHTML += insert;
 
@@ -54,21 +49,22 @@ function getPicsRepresentOfNumber(number) {
     totalOnes = Math.abs(parseInt(diffAfterRemovingHund % 10));
 
     for (var i = 0; i < totalHund; i++) {
-        returnHtml += number < 0 ? "<img src='imgs/negativeHundred.png'>" : "<img src='imgs/hundred.png'>";
+        returnHtml += number < 0 ? "<img src='imgs/negativeHundred.png'>&nbsp" : "<img src='imgs/hundred.png'>&nbsp";
         if (i == 4) {
             returnHtml += "&nbsp"
+
         }
     }
     returnHtml += "<br>";
     for (var i = 0; i < totalTens; i++) {
-        returnHtml += number < 0 ? "<img src='imgs/negativeTen.png'>" : "<img src='imgs/ten.png'>";
+        returnHtml += number < 0 ? "<img src='imgs/negativeTen.png'>&nbsp" : "<img src='imgs/ten.png'>&nbsp";
         if (i == 4) {
             returnHtml += "&nbsp";
         }
     }
     returnHtml += "<br>";
     for (var i = 0; i < totalOnes; i++) {
-        returnHtml += number < 0 ? "<img src='imgs/negativeOne.png'>" : "<img src='imgs/one.png'>";
+        returnHtml += number < 0 ? "<img src='imgs/negativeOne.png'>&nbsp" : "<img src='imgs/one.png'>&nbsp";
         if (i == 4) {
             returnHtml += "&nbsp";
         }
