@@ -1,10 +1,10 @@
 var t0, difference, boxedNums, numOfTerms, redCircle, redTriangle, redRectangle, blueCircle, blueTriangle, blueRectangle;
-redCircle = "<img src='imgs/negativeOne.png'>";
-redTriangle = "<img src='imgs/negativeTen.png'>";
-redRectangle = "<img src='imgs/negativeHundred.png'";
-blueCircle = "<img src='imgs/one.png'";
-blueTriangle = "<img src='imgs/ten.png'";
-blueRectangle = "img src='imgs/hundred.png'";
+redCircle = "<img src='imgs/negativeOne.png'>&nbsp";
+redTriangle = "<img src='imgs/negativeTen.png'>&nbsp";
+redRectangle = "<img src='imgs/negativeHundred.png'>&nbsp";
+blueCircle = "<img src='imgs/one.png'>&nbsp";
+blueTriangle = "<img src='imgs/ten.png'>&nbsp";
+blueRectangle = "img src='imgs/hundred.png'>&nbsp";
 
 function genTn() {
     reset();
@@ -55,14 +55,24 @@ function getPicsRepresentOfNumber(number) {
 
     for (var i = 0; i < totalHund; i++) {
         returnHtml += number < 0 ? "<img src='imgs/negativeHundred.png'>" : "<img src='imgs/hundred.png'>";
+        if (i == 4) {
+            returnHtml += "&nbsp"
+        }
     }
-
+    returnHtml += "<br>";
     for (var i = 0; i < totalTens; i++) {
         returnHtml += number < 0 ? "<img src='imgs/negativeTen.png'>" : "<img src='imgs/ten.png'>";
+        if (i == 4) {
+            returnHtml += "&nbsp";
+        }
     }
-
+    returnHtml += "<br>";
     for (var i = 0; i < totalOnes; i++) {
         returnHtml += number < 0 ? "<img src='imgs/negativeOne.png'>" : "<img src='imgs/one.png'>";
+        if (i == 4) {
+            returnHtml += "&nbsp";
+        }
     }
+    returnHtml += "<br>";
     return returnHtml;
 }
