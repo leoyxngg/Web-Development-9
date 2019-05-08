@@ -52,7 +52,6 @@ function getPicsRepresentOfNumber(number) {
         returnHtml += number < 0 ? "<img src='imgs/negativeHundred.png'>&nbsp" : "<img src='imgs/hundred.png'>&nbsp";
         if (i == 4) {
             returnHtml += "&nbsp"
-
         }
     }
     returnHtml += "<br>";
@@ -72,3 +71,15 @@ function getPicsRepresentOfNumber(number) {
     returnHtml += "<br>";
     return returnHtml;
 }
+
+// function updateT0Input(t0) {
+//     document.getElementById("updatet0").value = t0;
+// }
+
+// function updateDInput(difference) {
+//     document.getElementById("updated").value = difference;
+// }
+
+// function updateNInput(numOfTerms) {
+//     document.getElementById("updaten").value = numOfTerms;
+// }
