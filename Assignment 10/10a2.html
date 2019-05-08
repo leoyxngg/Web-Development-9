@@ -16,14 +16,17 @@
         Formula: <br>
         t<sub>n</sub> = <span id="formulat0">t<sub>0</sub></span> + <span id="formulad">d</span>*<span id='formulan'>n</span> <br>
         <br>
-        t<sub>0</sub> = <!-- <span id="updatet0"></span> -->
-        <input type="range" min="-50" max="50" value="0" id="t0" class="slider">
+        t<sub>0</sub> = <span id="updatet0"></span>
+        <input type="range" min="-50" max="50" value="0" id="t0" class="slider1" onchange="updateT0Input(this.value);">
+        <p>Value: <span id="demo1"></span></p>
         <br>
-        d = <!-- <span id="updated"></span> -->
-        <input type="range" min="-50" max="50" value="0" id="d" class="slider">
+        d = <span id="updated"></span>
+        <input type="range" min="-50" max="50" value="0" id="d" class="slider2" onchange="updateDInput(this.value);">
+        <p>Value: <span id="demo2"></span></p>
         <br>
-        n = <!-- <span id="updaten"></span> -->
-        <input type="range" min="1" max="20" value="10" id="tn" class="slider">
+        n = <span id="updaten"></span>
+        <input type="range" min="1" max="20" value="10" id="tn" class="slider3" onchange="updateNInput(this.value);">
+        <p>Value: <span id="demo3"></span></p>
         <br>
         <button id="buildButton" style="display:''" type="button" class="btn btn-warning"
             onclick="genTn()">Generate</button>
@@ -47,7 +50,3 @@
         crossorigin="anonymous"></script>
     <script src="10a2.js"></script>
 </body>
-
-<!-- onchange="updateT0Input(this.value);"
-onchange="updateDInput(this.value);"
-onchange="updateNInput(this.value);" -->
