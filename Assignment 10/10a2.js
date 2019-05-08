@@ -20,7 +20,7 @@ function genTn() {
 function buildNextOne(n, tn) {
     var insert = '<div class="col-sm-4 col-md-2 boxed center">'
     insert += 't<sub>' + n + '</sub><br>'
-    insert += '<span class="tn">' + tn + '</span>'
+    insert += '<span class="tn">' + tn + '</span><br>'
     insert += getPicsRepresentOfNumber(tn);
     insert += '</div>'
     document.getElementById("boxArea").innerHTML += insert;
