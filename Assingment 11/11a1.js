@@ -2,18 +2,77 @@ var msg = new SpeechSynthesisUtterance();
 var synth = window.speechSynthesis;
 
 function uniKeyCode(event) {
-    var key = event.which || event.keyCode; // event.keyCode is used for <IE8  document.getElementById("demo").innerHTML = "Unicode KEY code: " + key;
+    var key = event.which || event.keyCode; // event.keyCode is used for <IE8  document.getElementById("actionCenter").innerHTML = "Unicode KEY code: " + key;
+    // console.log(key)
     if (key == 32) {
-        document.getElementById("demo").innerHTML += " fire"
-               //INSIDE A FUNCTION
-       // set in the message (use a variable?)
-       msg = new SpeechSynthesisUtterance("test");
+        document.getElementById("actionCenter").innerHTML = "fire"
+       msg = new SpeechSynthesisUtterance("fire");
      
        //settings
        msg.rate = 1.2; //speech speed - range: 0 to 10
        console.log(synth.getVoices())
        //look into console to see all available voices/languages
-       msg.voice = synth.getVoices()[65];
+       msg.voice = synth.getVoices()[0];
+
+       //speaking trigger
+       synth.cancel(); //cut previous voice short
+       synth.speak(msg);
+    }
+
+    if(key == 87) {
+        document.getElementById("actionCenter").innerHTML = "jump"
+        msg = new SpeechSynthesisUtterance("jump");
+     
+       //settings
+       msg.rate = 1.2; //speech speed - range: 0 to 10
+       console.log(synth.getVoices())
+       //look into console to see all available voices/languages
+       msg.voice = synth.getVoices()[0];
+
+       //speaking trigger
+       synth.cancel(); //cut previous voice short
+       synth.speak(msg);
+    }
+
+    if(key == 83) {
+        document.getElementById("actionCenter").innerHTML = "roll"
+        msg = new SpeechSynthesisUtterance("roll");
+     
+       //settings
+       msg.rate = 1.2; //speech speed - range: 0 to 10
+       console.log(synth.getVoices())
+       //look into console to see all available voices/languages
+       msg.voice = synth.getVoices()[0];
+
+       //speaking trigger
+       synth.cancel(); //cut previous voice short
+       synth.speak(msg);
+    }
+
+    if(key == 65) {
+        document.getElementById("actionCenter").innerHTML = "roll left"
+        msg = new SpeechSynthesisUtterance("roll left");
+     
+       //settings
+       msg.rate = 1.2; //speech speed - range: 0 to 10
+       console.log(synth.getVoices())
+       //look into console to see all available voices/languages
+       msg.voice = synth.getVoices()[0];
+
+       //speaking trigger
+       synth.cancel(); //cut previous voice short
+       synth.speak(msg);
+    }
+
+    if(key == 68) {
+        document.getElementById("actionCenter").innerHTML = "roll right"
+        msg = new SpeechSynthesisUtterance("roll right");
+     
+       //settings
+       msg.rate = 1.2; //speech speed - range: 0 to 10
+       console.log(synth.getVoices())
+       //look into console to see all available voices/languages
+       msg.voice = synth.getVoices()[0];
 
        //speaking trigger
        synth.cancel(); //cut previous voice short
