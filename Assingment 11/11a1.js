@@ -13,10 +13,10 @@ function uniKeyCode(event) {
        msg.rate = 1.2; //speech speed - range: 0 to 10
        console.log(synth.getVoices())
        //look into console to see all available voices/languages
-       //msg.voice = synth.getVoices()[65];
+       msg.voice = synth.getVoices()[65];
 
        //speaking trigger
-       //synth.cancel(); //cut previous voice short
+       synth.cancel(); //cut previous voice short
        synth.speak(msg);
     }
 }
