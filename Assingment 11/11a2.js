@@ -4,13 +4,13 @@ var synth = window.speechSynthesis;
 function uniKeyCode(event) {
     var key = event.which || event.keyCode; // event.keyCode is used for <IE8  document.getElementById("actionCenter").innerHTML = "Unicode KEY code: " + key;
     // console.log(key)
+    // console.log(synth.getVoices())
     if (key == 32 || key == 13) {
         document.getElementById("actionCenter").innerHTML = "<img src='pics/fire.jpg'>"
         msg = new SpeechSynthesisUtterance("fire");
 
         //settings
         msg.rate = 1.2; //speech speed - range: 0 to 10
-        console.log(synth.getVoices())
         //look into console to see all available voices/languages
         msg.voice = synth.getVoices()[0];
 
@@ -24,7 +24,6 @@ function uniKeyCode(event) {
         msg = new SpeechSynthesisUtterance("jump");
 
         msg.rate = 1.2;
-        console.log(synth.getVoices())
         msg.voice = synth.getVoices()[0];
 
         synth.cancel();
@@ -36,7 +35,6 @@ function uniKeyCode(event) {
         msg = new SpeechSynthesisUtterance("roll");
 
         msg.rate = 1.2;
-        console.log(synth.getVoices())
         msg.voice = synth.getVoices()[0];
 
         synth.cancel();
@@ -45,10 +43,9 @@ function uniKeyCode(event) {
 
     if (key == 65 || key == 37) {
         document.getElementById("actionCenter").innerHTML = "<img src='pics/left.png'>"
-        msg = new SpeechSynthesisUtterance("roll left");
+        msg = new SpeechSynthesisUtterance("move left");
 
         msg.rate = 1.2;
-        console.log(synth.getVoices())
         msg.voice = synth.getVoices()[0];
 
         synth.cancel();
@@ -57,13 +54,16 @@ function uniKeyCode(event) {
 
     if (key == 68 || key == 39) {
         document.getElementById("actionCenter").innerHTML = "<img src='pics/right.png'>"
-        msg = new SpeechSynthesisUtterance("roll right");
+        msg = new SpeechSynthesisUtterance("move right");
 
         msg.rate = 1.2;
-        console.log(synth.getVoices())
         msg.voice = synth.getVoices()[0];
 
         synth.cancel();
         synth.speak(msg);
+    }
+
+    if (key == 87 && key == 65) {
+        document.getElementById("actionCenter").innerHTML = "Jump Left"
     }
 }
