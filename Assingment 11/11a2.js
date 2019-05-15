@@ -62,8 +62,4 @@ function uniKeyCode(event) {
         synth.cancel();
         synth.speak(msg);
     }
-
-    if (key == 87 && key == 65) {
-        document.getElementById("actionCenter").innerHTML = "Jump Left"
-    }
 }
