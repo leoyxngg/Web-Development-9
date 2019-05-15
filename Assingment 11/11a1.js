@@ -4,7 +4,7 @@ var synth = window.speechSynthesis;
 function uniKeyCode(event) {
     var key = event.which || event.keyCode; // event.keyCode is used for <IE8  document.getElementById("actionCenter").innerHTML = "Unicode KEY code: " + key;
     // console.log(key)
-    if (key == 32) {
+    if (key == 32 || key == 13) {
         document.getElementById("actionCenter").innerHTML = "<img src='pics/fire.jpg'>"
        msg = new SpeechSynthesisUtterance("fire");
      
@@ -19,7 +19,7 @@ function uniKeyCode(event) {
        synth.speak(msg);
     }
 
-    if(key == 87) {
+    if(key == 87 || key == 38) {
         document.getElementById("actionCenter").innerHTML = "<img src='pics/up.png'>"
         msg = new SpeechSynthesisUtterance("jump");
      
@@ -31,7 +31,7 @@ function uniKeyCode(event) {
        synth.speak(msg);
     }
 
-    if(key == 83) {
+    if(key == 83 || key == 40) {
         document.getElementById("actionCenter").innerHTML = "<img src='pics/down.png'>"
         msg = new SpeechSynthesisUtterance("roll");
 
@@ -43,7 +43,7 @@ function uniKeyCode(event) {
        synth.speak(msg);
     }
 
-    if(key == 65) {
+    if(key == 65 || key == 37) {
         document.getElementById("actionCenter").innerHTML = "<img src='pics/left.png'>"
         msg = new SpeechSynthesisUtterance("roll left");
      
@@ -55,7 +55,7 @@ function uniKeyCode(event) {
        synth.speak(msg);
     }
 
-    if(key == 68) {
+    if(key == 68 || key == 39) {
         document.getElementById("actionCenter").innerHTML = "<img src='pics/right.png'>"
         msg = new SpeechSynthesisUtterance("roll right");
     
