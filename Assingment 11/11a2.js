@@ -4,8 +4,8 @@ var synth = window.speechSynthesis;
 function uniKeyCode(event) {
     var key = event.which || event.keyCode; // event.keyCode is used for <IE8  document.getElementById("actionCenter").innerHTML = "Unicode KEY code: " + key;
     // console.log(key)
-    if (key == 32) {
-        document.getElementById("actionCenter").innerHTML = "fire"
+    if (key == 32 || key == 13) {
+        document.getElementById("actionCenter").innerHTML = "<img src='pics/fire.jpg'>"
         msg = new SpeechSynthesisUtterance("fire");
 
         //settings
@@ -19,8 +19,8 @@ function uniKeyCode(event) {
         synth.speak(msg);
     }
 
-    if (key == 87) {
-        document.getElementById("actionCenter").innerHTML = "jump"
+    if (key == 87 || key == 38) {
+        document.getElementById("actionCenter").innerHTML = "<img src='pics/up.png'>"
         msg = new SpeechSynthesisUtterance("jump");
 
         msg.rate = 1.2;
@@ -31,8 +31,8 @@ function uniKeyCode(event) {
         synth.speak(msg);
     }
 
-    if (key == 83) {
-        document.getElementById("actionCenter").innerHTML = "roll"
+    if (key == 83 || key == 40) {
+        document.getElementById("actionCenter").innerHTML = "<img src='pics/down.png'>"
         msg = new SpeechSynthesisUtterance("roll");
 
         msg.rate = 1.2;
@@ -43,8 +43,8 @@ function uniKeyCode(event) {
         synth.speak(msg);
     }
 
-    if (key == 65) {
-        document.getElementById("actionCenter").innerHTML = "roll left"
+    if (key == 65 || key == 37) {
+        document.getElementById("actionCenter").innerHTML = "<img src='pics/left.png'>"
         msg = new SpeechSynthesisUtterance("roll left");
 
         msg.rate = 1.2;
@@ -55,8 +55,8 @@ function uniKeyCode(event) {
         synth.speak(msg);
     }
 
-    if (key == 68) {
-        document.getElementById("actionCenter").innerHTML = "roll right"
+    if (key == 68 || key == 39) {
+        document.getElementById("actionCenter").innerHTML = "<img src='pics/right.png'>"
         msg = new SpeechSynthesisUtterance("roll right");
 
         msg.rate = 1.2;
