@@ -30,7 +30,7 @@ function uniKeyCode(event) {
         synth.cancel();
         synth.speak(msg);
 
-        x += 1;
+        // x += 1;
     }
 
     if (key == 83 || key == 40) {
@@ -54,12 +54,12 @@ function uniKeyCode(event) {
         synth.cancel();
         synth.speak(msg);
 
-        x += 56;
+        // x += 56;
 
-        if (x == 57) {
-            document.getElementById("actionCenter").innerHTML = "<img src='pics/upLeft.png'>";
-            x = 0;
-        }
+        // if (x == 57) {
+        //     document.getElementById("actionCenter").innerHTML = "<img src='pics/upLeft.png'>";
+        //     x = 0;
+        // }
     }
 
     if (key == 68 || key == 39) {
@@ -72,11 +72,11 @@ function uniKeyCode(event) {
         synth.cancel();
         synth.speak(msg);
 
-        x += 4;
+        // x += 4;
 
-        if (x == 5) {
-            document.getElementById("actionCenter").innerHTML = "<img src='pics/upRight.png'>"
-            x = 0;
-        }
+        // if (x == 5) {
+        //     document.getElementById("actionCenter").innerHTML = "<img src='pics/upRight.png'>"
+        //     x = 0;
+        // }
     }
 }
