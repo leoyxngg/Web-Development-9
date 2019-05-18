@@ -7,7 +7,7 @@ function uniKeyCode(event) {
     // console.log(key)
     // console.log(synth.getVoices())
     if (key == 32 || key == 13) {
-        document.getElementById("actionCenter").innerHTML = "<img src='pics/fire.jpg'>"
+        document.getElementById("actionCenter").innerHTML = "<img src='pics/fire.jpg'>";
         msg = new SpeechSynthesisUtterance("fire");
 
         //settings
@@ -21,7 +21,7 @@ function uniKeyCode(event) {
     }
 
     if (key == 87 || key == 38) {
-        document.getElementById("actionCenter").innerHTML = "<img src='pics/up.png'>"
+        document.getElementById("actionCenter").innerHTML = "<img src='pics/up.png'>";
         msg = new SpeechSynthesisUtterance("jump");
 
         msg.rate = 1.2;
@@ -34,7 +34,7 @@ function uniKeyCode(event) {
     }
 
     if (key == 83 || key == 40) {
-        document.getElementById("actionCenter").innerHTML = "<img src='pics/down.png'>"
+        document.getElementById("actionCenter").innerHTML = "<img src='pics/down.png'>";
         msg = new SpeechSynthesisUtterance("roll");
 
         msg.rate = 1.2;
@@ -45,7 +45,7 @@ function uniKeyCode(event) {
     }
 
     if (key == 65 || key == 37) {
-        document.getElementById("actionCenter").innerHTML = "<img src='pics/left.png'>"
+        document.getElementById("actionCenter").innerHTML = "<img src='pics/left.png'>";
         msg = new SpeechSynthesisUtterance("move left");
 
         msg.rate = 1.2;
