@@ -13,10 +13,8 @@ function keyupFunc(e) {
 
 function keydownFunc(e) {
     var e = e || event;
-    keys[e.keyCode] = true;
-    //alert(e.keyCode);   
+    keys[e.keyCode] = true; 
     var checkbox = document.querySelector('input[type="checkbox"]');
-    //alert(checkBox);
     if (checkbox.checked) {
         // do this
         uniKeyCodeChinese(event);
