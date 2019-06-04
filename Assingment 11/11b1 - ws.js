@@ -59,4 +59,12 @@ console.log(arr1);
 // var arr1 = ["apple", "banana", "cherry"];
 // var arr2 = ["apple", "banana", "cherry"];
 // var arr3 = arr1.toString();
+// var arr4 = arr2.toString();
+// if (arr3 == arr4) {
+//     console.log("The two arrays are the same!")
+// }
+
+// else {
+//     console.log("The two arrays are not the same!")
+// }
 
